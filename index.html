@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="TV">
-    <title>TV</title>
+    <title>TV DIGITAL</title>
     <meta name="description"
         content="Indonesia- Live Sport Streaming, Watch Live Football,Basketball.">
     <meta name="keywords" content="sports livestream, live sports, sepak bola,bola basket,statistik teknis">
@@ -17,6 +17,8 @@
 
     <!-- css  -->
     <link rel="stylesheet" href="assets/scss/style.css">
+	 <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+	 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 
   <style>
@@ -152,33 +154,70 @@ body {
 }
 
 
+.fooSelect
+{
+    display:inline;
+}
+.fooSelect .select2-selection__rendered 
+{
+    font-size:20px;
+}
+
+.fooSelect .select2-dropdown
+{
+    font-size:20px;
+}
 </style>
 </head>
 
 <body style="background-color:white">
     <main>
-  
+	
         <section class="profilecard">
-	          <div class='wrapper'> <div class="content-iframe" id="myIframe">
+			<center><h1 style="font-size:30px">TV DIGITAL</h1></center>
+	          <div class='wrapper'> 
+			  <div style="margin-bottom:20px">
+			  <div class="fooSelect">
+			  <select id="channel" onchange="tukar(this.value);" style="width:100%">
+				<option value="rcti">RCTI</option>
+				<option value="gtv">G-TV</option>
+				<option value="transtv">Trans TV</option>
+				<option value="trans7">Trans 7</option>
+				<option value="indosiar">Indosiar</option>
+				<option value="sctv">SCTV</option>
+				<option value="tvone">TV One</option>
+			  </select>
+			  </div>
+			  </div>
+			  <div class="content-iframe" id="myIframe">
                 <img class="responsive-iframe" scr=""/>
-                <a class="iframe-play" style="text-decoration: none;" href="javascript:void(0)" onclick="switchq('https://embed.rctiplus.com/live/rcti/inewsid'); "><i class="fas fa-play-circle" style="font-size: 100px; padding-left: 2px; padding-top: 2px;"></i></a> 
+                <a class="iframe-play" id="play1" style="text-decoration: none;" href="javascript:void(0)" onclick="switchq('https://embed.rctiplus.com/live/rcti/inewsid'); "><i class="fas fa-play-circle" style="font-size: 100px; padding-left: 2px; padding-top: 2px;"></i></a> 
             </div>
 
-</div> <center> 
+			</div> 
 
+<!--
 		<div id="histats_counter"></div><hr>
-		<!--
+		
      	  <button class="tomboltv" onclick="switchq('https://www.score808.eu.org/p/kategori.html')"><i class="fas fa-play"></i> Refresh</button>
            <button class="tomboltv" onclick="switchq('https://www.score808.eu.org/p/server-3.html')" style="background: green; color: white; cursor: pointer;"><i class="fas fa-play"></i> CH 2</button>
             <button><a class="tomboltv" href="https://shope.ee/6KVC1SowEb" style="background: green; color: white; cursor: pointer;"><i class="fas fa-play"></i> CH 3</a></button>
             <button><a class="tomboltv" href="https://www.score808.eu.org/p/link-streaming.html" style="background: silver; color: black;">Link Alternative</a></button>
-	 -->
+	
 			 <hr><br/>
 <button class="tomboltv" onclick="switchq('https://20.detik.com/watch/livestreaming-transtv?smartautoplay=true')" style="background: red; color: white; cursor: pointer;"><i class="fas fa-play"></i> Trans TV</button>
+<button class="tomboltv" onclick="switchq('https://20.detik.com/watch/livestreaming-trans7?smartautoplay=true')" style="background: red; color: white; cursor: pointer;"><i class="fas fa-play"></i> Trans TV</button>
+<button class="tomboltv" onclick="switchq('https://embed.rctiplus.com/live/gtv/inewsid')" style="background: red; color: white; cursor: pointer;"><i class="fas fa-play"></i> G-TV</button>
 <button class="tomboltv" onclick="switchq('https://embed.rctiplus.com/live/rcti/inewsid')" style="background: red; color: white; cursor: pointer;"><i class="fas fa-play"></i> RCTI</button>
 <button class="tomboltv" onclick="switchq('https://www.dailymotion.com/embed/video/k2A6i1fIfWpxZpoH4XD?ads_params=tvone&api=postMessage&autoplay=true&endscreen-enable=true&id=player&mute=false&origin=https%3A%2F%2Fwww.vlix.id&queue-enable=false')" style="background: red; color: white; cursor: pointer;"><i class="fas fa-play"></i> TV One</button>
 <button class="tomboltv" onclick="switchq('https://embed.rctiplus.com/live/mnctv/inewsid')" style="background: red; color: white; cursor: pointer;"><i class="fas fa-play"></i> MNCTV</button>
 <button class="tomboltv" onclick="switchq('https://embed.rctiplus.com/live/inews/inewsid')" style="background: red; color: white; cursor: pointer;"><i class="fas fa-play"></i> I News</button>
+<button class="tomboltv" onclick="switchq('pages/indosiar.html')" style="background: red; color: white; cursor: pointer;"><i class="fas fa-play"></i> Indosiar</button>
+<button class="tomboltv" onclick="switchq('pages/sctv.html')" style="background: red; color: white; cursor: pointer;"><i class="fas fa-play"></i> SCTV</button>
+<button class="tomboltv" onclick="switchq('pages/animalplanet.html')" style="background: red; color: white; cursor: pointer;"><i class="fas fa-play"></i> Animal Planet</button>
+<button class="tomboltv" onclick="switchq('pages/cinemax.html')" style="background: red; color: white; cursor: pointer;"><i class="fas fa-play"></i> CINEMAX</button>
+<button class="tomboltv" onclick="switchq('pages/test.html')" style="background: red; color: white; cursor: pointer;"><i class="fas fa-play"></i> ESPN</button>
+<button class="tomboltv" onclick="switchq('https://idn13.score808.online/basketball/485393-miami-heat-vs-oklahoma-city-thunder.html')" style="background: red; color: white; cursor: pointer;"><i class="fas fa-play"></i> TEST</button>
 <button class="tomboltv" onclick="switchq('https://www.score808.eu.org/p/server-3.html')" style="background: red; color: white; cursor: pointer;"><i class="fas fa-play"></i> CCTV 5</button>
 <button class="tomboltv" onclick="switchq('https://www.score808.eu.org/p/spotv1-plus.html')" style="background: red; color: white; cursor: pointer;"><i class="fas fa-play"></i> SPOTV1 (+)</button>
 <button class="tomboltv" onclick="switchq('https://www.score808.eu.org/p/bein-sport-7.html')" style="background: red; color: white; cursor: pointer;"><i class="fas fa-play"></i> SPOTV1 HD</button>
@@ -188,11 +227,12 @@ body {
 <br/>
 		<br/>
        
-          </center>
+           <div class="addthis_inline_share_toolbox"></div></center>
+		   */
          </section>   
         </section>    
   </div>
-	    
+	   <!-- 
         <section class="links"> <div class="container">
                                 <h2>Jadwal & Hasil Pertandingan</h2>
                                 <br>
@@ -203,18 +243,58 @@ body {
                     <hr>
 </div>
         </section>
-    
+    -->
     </main>
 	
    
-	    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	    <script src="sw.js" defer></script>
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
-    <script src="assets/js/main.js" defer></script>
-    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-638f71c3910b8dd4" async=""></script>
+    <script src="assets/js/main.js" ></script>
+	<script src="assets/plugins/select2/js/select2.full.min.js" ></script>
+	
+   <!-- <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-638f71c3910b8dd4" async=""></script>-->
    
 <script type='text/javascript'>
+//$().ready(function(),{
+document.addEventListener('DOMContentLoaded', () => {
+$("#channel").select2();
+
+$("#play1").click();
+
+});
+function tukar(ch){
+	if(ch=="rcti")
+	{
+		switchq('https://embed.rctiplus.com/live/rcti/inewsid');
+	}
+	else if(ch=="gtv")	
+	{
+		switchq('https://embed.rctiplus.com/live/gtv/inewsid');
+	
+	}
+	else if(ch=="transtv")	
+	{
+		switchq('https://20.detik.com/watch/livestreaming-transtv?smartautoplay=true');
+	}
+	else if(ch=="trans7")	
+	{
+		switchq('https://20.detik.com/watch/livestreaming-trans7?smartautoplay=true');
+	}
+	else if(ch=="sctv")	
+	{
+		switchq('pages/sctv.html');
+	}
+	else if(ch=="indosiar")	
+	{
+		switchq('pages/indosiar.html');
+	}
+	else if(ch=="tvone")	
+	{
+		switchq('https://www.dailymotion.com/embed/video/k2A6i1fIfWpxZpoH4XD?ads_params=tvone&api=postMessage&autoplay=true&endscreen-enable=true&id=player&mute=false&origin=https%3A%2F%2Fwww.vlix.id&queue-enable=false')
+	}
+}
 function switchq(src){
     document.getElementById("myIframe").innerHTML = '<iframe class="responsive-iframe" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; autoplay" allowfullscreen="" frameborder="0"	height="380" src="'+ src +'" width="100%"></iframe>';
 }
